@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{page_title}}{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Edit Bottle {{bottle.bottleName}}</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            {{ include('bottle/_form.html.twig', {'button_label': 'Update bottle'}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{{ path('app_bottle_index') }}" class="btn btn-dark">back to list</a>
+        </div>
+        <div class="col-md-6">
+            {{ include('bottle/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{page_title}}{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Add Storage</h1>
+        </div>
+    </div>
+    <div>
+        {{ include('storage/_form.html.twig') }}
+
+    </div>
+    <div>
+         <a href="{{ path('app_storage_index') }}" class="btn btn-dark">List of Storage</a>
+    </div>
+</div>
+{% endblock %}

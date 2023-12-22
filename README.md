@@ -18,6 +18,8 @@ installation des dependance
 
         npm i
 
+        npm install sass-loader@^13.0.0 sass --save-dev
+
         npm install bootstrap --save-dev
 
 
@@ -60,4 +62,30 @@ création des formulaire
 
     symfony console make:form
 
-    
+step 2
+
+création des controller 
+
+    symfony console make:controller
+
+création du crud de storage  et bottle 
+
+template 
+
+    all    -> index.html.twig
+    show   -> show.html.twig
+    add    -> new.html.twig + _form.html.twig
+    edit   -> edit.html.twig + _form.html.twig
+    delete -> _delete.html.twig
+
+création des method dans chaque controller
+
+ajout de
+
+use App\Entity\<nom de Entity>;
+use App\Form\<nom du Form>;
+use App\Repository\<nom de Repository>;
+
+#[Route('/<nom de route>')]
+
+au début de chaque controller

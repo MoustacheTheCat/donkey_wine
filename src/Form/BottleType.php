@@ -8,8 +8,9 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class BottleStyleType extends AbstractType
+class BottleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -21,7 +22,12 @@ class BottleStyleType extends AbstractType
             ->add('country')
             ->add('storage', EntityType::class, [
                 'class' => Storage::class,
-'choice_label' => 'id',
+                'choice_label' => 'storageName',
+            ])
+            ->add('Submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-dark',
+                ],
             ])
         ;
     }

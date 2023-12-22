@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{page_title}}{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>Add bottle</h1>
+        </div>
+    </div>
+    <div>
+        {{ include('bottle/_form.html.twig') }}
+
+    </div>
+    <div>
+         <a href="{{ path('app_bottle_index') }}" class="btn btn-dark">List of bottle</a>
+    </div>
+</div>
+{% endblock %}

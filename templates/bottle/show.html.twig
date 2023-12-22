@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div>
+        <div>
+            <h1>{{ page_title }}</h1>
+        </div>
+    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>year</th>
+                    <th>Wine Maker</th>
+                    <th>Country</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th> {{bottle.bottleName}}</th>
+                    <th>{{bottle.bottleType}}</th>
+                    <th> {{bottle.bottleYear}}</th>
+                    <th>{{bottle.wineMaker}}</th>
+                    <th> {{bottle.country}}</th>
+                    <th>
+                        <a href="{{ path('app_bottle_edit', {'id': bottle.id}) }}" class="btn btn-dark">Edit</a>
+                    </th>
+                    <th>
+                        <a href="{{ path('app_bottle_delete', {'id': bottle.id}) }}" class="btn btn-dark">Delete</a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    <div>
+        <a href="{{ path('app_bottle_index')}}" class="btn btn-dark">List of bottles</a>
+    </div>
+    <div>
+    </div>
+</div>
+{% endblock %}

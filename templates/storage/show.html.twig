@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div>
+        <div>
+            <h1>{{ page_title }}</h1>
+        </div>
+    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Parent</th>
+                    <th>Reference</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th> {{storage.storageName}}</th>
+                    <th>
+                        {% if storage.parent %}
+                        {{ storage.parent.storageName }}
+                        {% else %}
+                            CAVE
+                        {% endif %}
+                    </th>
+                    <th>{{storage.storageReference}}</th>
+                    <th>
+                        <a href="{{ path('app_storage_edit', {'id': storage.id}) }}" class="btn btn-dark">Edit</a>
+                    </th>
+                    <th>
+                        <a href="{{ path('app_storage_delete', {'id': storage.id}) }}" class="btn btn-dark">Delete</a>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    <div>
+        <a href="{{ path('app_storage_index')}}" class="btn btn-dark">List of Storages</a>
+    </div>
+    <div>
+    </div>
+</div>
+{% endblock %}
