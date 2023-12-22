@@ -19,6 +19,7 @@ class BottleController extends AbstractController
     #[Route('s', name: 'app_bottle_index')]
     public function index(BottleRepository $bottleRepository): Response
     {
+        dump($bottleRepository->findAll());
         return $this->render('bottle/index.html.twig', [
             'bottles' => $bottleRepository->findAll(),
             'page_title' => 'BottleController',

@@ -19,6 +19,7 @@
                     <th>year</th>
                     <th>Wine Maker</th>
                     <th>Country</th>
+                    <th>Storage</th>
                     <th>Show</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -32,7 +33,7 @@
                         <th> {{bottle.bottleYear}}</th>
                         <th>{{bottle.wineMaker}}</th>
                         <th> {{bottle.country}}</th>
-                       
+                        <th> {{bottle.storage.storageName}}</th>
                         <th>
                             <a href="{{ path('app_bottle_show', {'id': bottle.id}) }}" class="btn btn-dark">Show</a>
                         </th>

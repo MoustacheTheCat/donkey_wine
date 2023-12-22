@@ -89,3 +89,9 @@ use App\Repository\<nom de Repository>;
 #[Route('/<nom de route>')]
 
 au début de chaque controller
+
+step 3
+
+        composer require --dev symfony/var-dumper
+
+ajout du nom de stockage de chaque bouteille
